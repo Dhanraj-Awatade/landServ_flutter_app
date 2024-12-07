@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mahareal_flutter_app/pages/home.dart';
+import 'package:mahareal_flutter_app/pages/home_page.dart';
+import 'package:mahareal_flutter_app/pages/profile_page.dart';
+import 'package:mahareal_flutter_app/pages/vault_page.dart';
 import 'package:mahareal_flutter_app/theme/main_theme.dart';
 
 void main() {
@@ -12,10 +14,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MCS',
+      title: 'MahaReal',
       theme: mainTheme(),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(title: 'MCS'),
+      // initialRoute: '/alterhome',
+      home: const HomePage(),
+      routes: {
+        '/home': (context) => const HomePage(),
+        '/profile': (context) => const ProfilePage(),
+        '/vault': (context) => const VaultPage(),
+        // '/alterhome': (context) => const AlternateHomepage(),
+      },
     );
   }
 }
