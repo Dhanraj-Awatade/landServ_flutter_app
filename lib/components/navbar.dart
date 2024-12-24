@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
 
-// int selectedIndex = 0;
-// _updateDestination(){
+class MyNavBar extends StatefulWidget {
+  const MyNavBar({super.key});
 
-// }
+  @override
+  State<MyNavBar> createState() => _MyNavBarState();
+}
 
-myNavBar() => NavigationBar(
-      elevation: 6,
-      backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
-      indicatorShape: const CircleBorder(),
-      // shadowColor: const Color.fromRGBO(0, 0, 0, 20).withOpacity(0.2),
+class _MyNavBarState extends State<MyNavBar> {
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      // indicatorShape: const CircleBorder(),
+      // shadowColor: const Color.fromRGBO(0, 0, 0, 255).withOpacity(0.2),
       // selectedIndex: selectedIndex,
       // onDestinationSelected: (value) => {selectedIndex},
-      destinations: const <Widget>[
-        NavigationDestination(
-          icon: Icon(Icons.home_outlined),
+      selectedItemColor: Colors.white,
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home_rounded),
           label: "Home",
-          selectedIcon: Icon(Icons.home_rounded),
         ),
-        NavigationDestination(
+        BottomNavigationBarItem(
             icon: Icon(Icons.ac_unit_rounded), label: "Vault"),
-        NavigationDestination(icon: Icon(Icons.phone), label: "Consult Me"),
+        BottomNavigationBarItem(icon: Icon(Icons.phone), label: "Consult Me"),
       ],
     );
+  }
+}

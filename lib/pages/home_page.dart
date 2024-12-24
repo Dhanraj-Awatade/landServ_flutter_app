@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:mahareal_flutter_app/components/homepage_categories.dart';
+import 'package:mahareal_flutter_app/components/HomePage/homepage_categories.dart';
+import 'package:mahareal_flutter_app/components/HomePage/services_list.dart';
 import 'package:mahareal_flutter_app/components/navbar.dart';
-import 'package:mahareal_flutter_app/configs/constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,8 +23,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
-      bottomNavigationBar: myNavBar(),
+      // backgroundColor: Colors.green,
+      bottomNavigationBar: const MyNavBar(),
       body: SafeArea(
         child: Column(
           children: [
@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.max,
                           children: [
                             Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -68,6 +69,8 @@ class _HomePageState extends State<HomePage> {
                                   "One solution for all of your Land Requirements!",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
+                                    fontSize: 12,
+                                    leadingDistribution: TextLeadingDistribution.even
                                   ),
                                 ),
                               ],
@@ -82,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.white54,
                                 ),
                               ),
-                              child: const Icon(Icons.account_circle_rounded),
+                              child: const Icon(Icons.account_circle_rounded,),
                             )
                           ],
                         ),
@@ -166,9 +169,9 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                 ),
                 width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: allServicesList(),
+                child: const Padding(
+                  padding: EdgeInsets.fromLTRB(0,8,0,0),
+                  child: ServicesList(),
                 ),
               ),
             ),

@@ -1,76 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-//// --------------------------------------------------
-List<List<Widget>> homePageSections = [
-  [
-    Image.asset(
-      'assets/icons/all_services.png',
-      scale: 13,
-    ),
-    const Padding(
-      padding: EdgeInsets.symmetric(vertical: 8),
-      child: Text(
-        "All Services",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
-        textAlign: TextAlign.center,
-      ),
-    )
-  ],
-  [
-    Image.asset(
-      'assets/icons/documents.png',
-      scale: 13,
-    ),
-    const Padding(
-      padding: EdgeInsets.symmetric(vertical: 8),
-      child: Text(
-        "Land Documents",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
-        textAlign: TextAlign.center,
-      ),
-    )
-  ],
-  [
-    Image.asset(
-      'assets/icons/services.png',
-      scale: 10,
-    ),
-    const Padding(
-      padding: EdgeInsets.symmetric(vertical: 8),
-      child: Text(
-        "Land Services",
-        textAlign: TextAlign.center,
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-    )
-  ],
-  [
-    Image.asset(
-      'assets/icons/survey.png',
-      scale: 10,
-    ),
-    const Padding(
-      padding: EdgeInsets.symmetric(vertical: 8),
-      child: Text(
-        "Surveys",
-        textAlign: TextAlign.center,
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-    )
-  ],
+const List servicesIconList  =[
+  Text("First"),
+  Text("Sec"),
+  Text("Third"),
 ];
-//// --------------------------------------------------
 
-allServicesList() => ListView.separated(
-      itemCount: 3,
-      separatorBuilder: (BuildContext context, int index) {
-        return Text("---------- $index===");
-      },
-      itemBuilder: (BuildContext context, int index) {
-        return Text("Item $index");
-      },
-    );
+const List servicesDescList  =[
+  Text("First"),
+  Text("Sec"),
+  Text("Third"),
+];

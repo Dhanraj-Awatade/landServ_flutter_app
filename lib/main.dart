@@ -5,17 +5,19 @@ import 'package:mahareal_flutter_app/pages/vault_page.dart';
 import 'package:mahareal_flutter_app/theme/main_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const McsApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class McsApp extends StatelessWidget {
+  const McsApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MahaReal',
-      theme: mainTheme(),
+      themeMode: ThemeMode.light,
+      theme: MainTheme.lightTheme,
+      darkTheme: MainTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       // initialRoute: '/alterhome',
       home: const HomePage(),
