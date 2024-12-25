@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:mahareal_flutter_app/configs/constants.dart';
 
 class ServicesList extends StatelessWidget {
-  const ServicesList({super.key});
+   const ServicesList({
+    super.key,
+    required this.categoryIndex
+  });
+
+   final int categoryIndex;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 3,
+      itemCount: homePageCategoryLists[categoryIndex].length,
 
       itemBuilder: (BuildContext context, int index) {
         return Container(
@@ -17,13 +22,18 @@ class ServicesList extends StatelessWidget {
           decoration: BoxDecoration(
             // color: Colors.amberAccent,
             border: Border.all(),
-              borderRadius: BorderRadius.circular(12)
+              borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
             children: [
               Padding(
                 padding: EdgeInsets.all(12),
-                child: servicesDescList[index],
+                child: Text(
+                  homePageCategoryLists[categoryIndex][index],
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                  ),
+                ),
               )
             ],
           ),

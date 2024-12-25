@@ -3,6 +3,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:mahareal_flutter_app/components/HomePage/homepage_categories.dart';
 import 'package:mahareal_flutter_app/components/HomePage/services_list.dart';
 import 'package:mahareal_flutter_app/components/navbar.dart';
+import 'package:mahareal_flutter_app/configs/constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -65,12 +66,13 @@ class _HomePageState extends State<HomePage> {
                                     wordSpacing: 20,
                                   ),
                                 ),
-                                const Text(
+                                 Text(
                                   "One solution for all of your Land Requirements!",
                                   style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12,
-                                    leadingDistribution: TextLeadingDistribution.even
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      leadingDistribution: TextLeadingDistribution.even,
+                                    color: secondaryColor
                                   ),
                                 ),
                               ],
@@ -90,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                         const SizedBox(
-                          height: 40,
+                          height: 20,
                         ),
                         const TextField(
                           decoration: InputDecoration(
@@ -169,9 +171,9 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                 ),
                 width: double.infinity,
-                child: const Padding(
-                  padding: EdgeInsets.fromLTRB(0,8,0,0),
-                  child: ServicesList(),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0,8,0,0),
+                  child: ServicesList(categoryIndex: _currentSelectedSectionIndex,),
                 ),
               ),
             ),

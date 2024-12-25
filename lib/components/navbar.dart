@@ -11,13 +11,6 @@ class _MyNavBarState extends State<MyNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      elevation: 0,
-      backgroundColor: Colors.transparent,
-      // indicatorShape: const CircleBorder(),
-      // shadowColor: const Color.fromRGBO(0, 0, 0, 255).withOpacity(0.2),
-      // selectedIndex: selectedIndex,
-      // onDestinationSelected: (value) => {selectedIndex},
-      selectedItemColor: Colors.white,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home_rounded),
