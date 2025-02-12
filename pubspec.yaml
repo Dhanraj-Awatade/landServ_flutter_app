@@ -34,6 +34,8 @@ dependencies:
     # The following adds the Cupertino Icons font to your application.
     # Use with the CupertinoIcons class for iOS style icons.
     cupertino_icons: ^1.0.8
+    iconsax: ^0.0.8
+    google_nav_bar: ^5.0.7
 #    google_fonts: ^6.2.1
     lucide_icons: ^0.257.0
 #    path_provider_android: ^2.0.20
@@ -106,6 +108,21 @@ flutter:
                 style: italic
               - asset: assets/fonts/LumieraRough.ttf
                 weight: 700
+        - family: Lato
+          fonts:
+            - asset: assets/fonts/Lato/Lato-Regular.ttf
+            - asset: assets/fonts/Lato/Lato-Italic.ttf
+              style: italic
+            - asset: assets/fonts/Lato/Lato-Bold.ttf
+              weight: 700
+            - asset: assets/fonts/Lato/Lato-BoldItalic.ttf
+              weight: 700
+              style: italic
+            - asset: assets/fonts/Lato/Lato-LightItalic.ttf
+              weight: 200
+              style: italic
+            - asset: assets/fonts/Lato/Lato-Light.ttf
+              weight: 200
     #
     # For details regarding fonts from package dependencies,
     # see https://flutter.dev/to/font-from-package
