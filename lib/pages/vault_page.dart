@@ -5,8 +5,9 @@ class VaultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Vault Page"),
+    return const Scaffold(
+      // bottomNavigationBar: MyNavBar(),
+      body: Text("Vault Page"),
     );
   }
 }

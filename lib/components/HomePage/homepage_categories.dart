@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mahareal_flutter_app/configs/constants/colors.dart';
 
 class HomepageCategory extends StatelessWidget {
   final String imageAsset;
@@ -28,7 +29,7 @@ class HomepageCategory extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: isSelected ? Colors.white60 : Colors.white24,
+              color: isSelected ? MyColors.primary : MyColors.lightContainer,
               borderRadius: BorderRadius.circular(18),
             ),
             padding: const EdgeInsets.all(16),
@@ -46,8 +47,8 @@ class HomepageCategory extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-              color: isSelected ? Colors.white : Colors.white70,
-              shadows: [Shadow(blurRadius: isSelected ? 5 : 0)],
+              color: isSelected ? MyColors.primary : MyColors.textWhite,
+              shadows: [Shadow(blurRadius: isSelected ? 2 : 0,)],
               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
             ),
             textAlign: TextAlign.center,
