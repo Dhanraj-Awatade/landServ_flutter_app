@@ -25,6 +25,7 @@ class CustomTextFormField extends StatelessWidget {
       textAlign: TextAlign.start,
       style: TextStyle(
         color: MyColors.textWhite,
+        fontSize: CustomSizes.regularFont,
       ),
       decoration: InputDecoration(
         label: Text(label),
@@ -34,8 +35,8 @@ class CustomTextFormField extends StatelessWidget {
         ),
         alignLabelWithHint: true,
         floatingLabelAlignment: FloatingLabelAlignment.start,
-        contentPadding: EdgeInsets.only(left: CustomSizes.defaultSpace),
-        filled: true,
+        contentPadding: CustomSizes.inputPadding,
+        filled: false,
         hintText: hint,
         hintStyle: TextStyle(color: MyColors.darkTransluscent),
         fillColor: MyColors.lightTransluscent,

@@ -8,6 +8,8 @@ class CustomSizes {
   static const listPadding = EdgeInsets.all(18);
   static const double defaultBorderWidth = 2;
   static const double smallBorderWidth = 1;
+  static const inputPadding =
+      EdgeInsets.fromLTRB(CustomSizes.defaultSpace, 16, 0, 16);
 
   //Elevations
   static const double buttonElevation = 3;
@@ -19,6 +21,10 @@ class CustomSizes {
 
   // Radii
   static const maxCircularRadius = Radius.circular(25);
+  static final maxCircularBorderRadius = BorderRadius.circular(25);
+
+  // Heights
+  // static const double inputHeight = 50;
 
   //spaces
   static const double defaultSpace = 20;

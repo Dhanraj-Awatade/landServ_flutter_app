@@ -34,6 +34,22 @@ class MainTheme {
         overlayColor: WidgetStatePropertyAll(MyColors.bgNavy),
       ),
     ),
+    dropdownMenuTheme: DropdownMenuThemeData(
+      textStyle: TextStyle(color: MyColors.textWhite),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: false,
+        // fillColor: MyColors.lightTransluscent,
+        alignLabelWithHint: true,
+        contentPadding: CustomSizes.inputPadding,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            width: CustomSizes.smallBorderWidth,
+            color: MyColors.lightContainer,
+          ),
+          borderRadius: BorderRadius.all(CustomSizes.maxCircularRadius),
+        ),
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         backgroundColor: MyColors.bgLight,

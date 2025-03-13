@@ -25,8 +25,13 @@ class ServicesList extends StatelessWidget {
               overlayColor: WidgetStatePropertyAll(MyColors.secondary),
               splashFactory: InkRipple.splashFactory,
             ),
-            // onPressed: ()=>ScaffoldMessenger.of(context).showSnackBar(mySnackBar('Tapped ${MyLists.homePageCategoryLists[categoryIndex][index]}')),
-            onPressed: () => Navigator.pushNamed(context, '/satbara'),
+            onPressed: () => {
+              // ScaffoldMessenger.of(context).showSnackBar(mySnackBar(
+              // 'Navigating to ${MyLists.homePageCategoryLists[categoryIndex][index]}')),
+              Navigator.pushNamed(context, '/service', arguments: {
+                "title": MyLists.homePageCategoryLists[categoryIndex][index]
+              })
+            },
             child: Padding(
               padding: CustomSizes.safetyPadding,
               child: Text(

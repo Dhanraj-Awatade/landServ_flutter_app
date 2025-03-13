@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mahareal_flutter_app/components/snackbar.dart';
 import 'package:mahareal_flutter_app/components/text_form_field.dart';
+import 'package:mahareal_flutter_app/configs/constants/colors.dart';
 import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 
 class CustomForm extends StatefulWidget {
@@ -25,7 +26,31 @@ class _CustomFormState extends State<CustomForm> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: CustomSizes.defaultSpace),
-            DropdownMenu(dropdownMenuEntries: []),
+            DropdownMenu(
+              label: Text(
+                "DropDown Menu",
+                style: TextStyle(
+                    color: MyColors.secondary, fontWeight: FontWeight.bold),
+              ),
+              hintText: "Select a value",
+              enableSearch: true,
+              enableFilter: true,
+              width: double.infinity,
+              menuStyle: MenuStyle(
+                elevation: WidgetStatePropertyAll(CustomSizes.buttonElevation),
+                shadowColor: WidgetStatePropertyAll(MyColors.tertiary),
+                shape: WidgetStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: CustomSizes.maxCircularBorderRadius,
+                  ),
+                ),
+              ),
+              dropdownMenuEntries: [
+                DropdownMenuEntry(value: 1, label: 'Hehe'),
+                DropdownMenuEntry(value: 2, label: 'Hihi'),
+                DropdownMenuEntry(value: 3, label: 'Hoho'),
+              ],
+            ),
             SizedBox(height: CustomSizes.defaultSpace),
             CustomTextFormField(
               label: "Label",

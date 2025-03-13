@@ -16,7 +16,8 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // initialRoute: '/alterhome',
       home: MyNavBar(),
-      routes: MyRoutes.allRoutes
+      // routes: MyRoutes.allRoutes,
+      onGenerateRoute: (settings) => MyRoutes.allRoutes(settings),
     );
   }
 }
