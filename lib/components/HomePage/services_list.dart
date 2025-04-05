@@ -16,8 +16,8 @@ class ServicesList extends StatelessWidget {
         return Padding(
           padding: CustomSizes.listPadding,
           child: ElevatedButton(
+            iconAlignment: IconAlignment.start,
             style: ButtonStyle(
-              iconAlignment: IconAlignment.start,
               alignment: Alignment.centerLeft,
               backgroundColor: WidgetStatePropertyAll(MyColors.lightContainer),
               elevation: WidgetStatePropertyAll(CustomSizes.buttonElevation),
