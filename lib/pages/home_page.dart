@@ -72,20 +72,20 @@ class _HomePageState extends State<HomePage> {
                               style: TextStyle(fontSize: CustomSizes.smallFont),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(CustomSizes.maxCircularRadius),
+                              borderRadius: BorderRadius.all(
+                                  CustomSizes.maxCircularRadius),
                               borderSide: BorderSide.none,
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                CustomSizes.maxCircularRadius,
-                              ),
-                              borderSide: BorderSide(width: CustomSizes.smallBorderWidth,color: MyColors.primary)
-                            ),
+                                borderRadius: BorderRadius.all(
+                                  CustomSizes.maxCircularRadius,
+                                ),
+                                borderSide: BorderSide(
+                                    width: CustomSizes.smallBorderWidth,
+                                    color: MyColors.primary)),
                             fillColor: MyColors.lightTransluscent,
                             filled: true,
-                            floatingLabelBehavior:
-                                FloatingLabelBehavior.never),
+                            floatingLabelBehavior: FloatingLabelBehavior.never),
                       )
                     ],
                   ),
@@ -142,8 +142,10 @@ class _HomePageState extends State<HomePage> {
               ),
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(0,8,0,0),
-                child: ServicesList(categoryIndex: _currentSelectedSectionIndex,),
+                padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+                child: ServicesList(
+                  categoryIndex: _currentSelectedSectionIndex,
+                ),
               ),
             ),
           ),
