@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mahareal_flutter_app/components/navigator.dart';
 import 'package:mahareal_flutter_app/configs/constants/routes.dart';
+import 'package:mahareal_flutter_app/pages/login_page.dart';
 import 'package:mahareal_flutter_app/theme/main_theme.dart';
 
 class App extends StatelessWidget {
@@ -15,7 +15,8 @@ class App extends StatelessWidget {
       darkTheme: MainTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       // initialRoute: '/alterhome',
-      home: MyNavBar(),
+      home: LoginPage(),
+      //MyNavBar(),
       // routes: MyRoutes.allRoutes,
       onGenerateRoute: (settings) => MyRoutes.allRoutes(settings),
     );

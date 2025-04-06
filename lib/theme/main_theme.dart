@@ -11,7 +11,7 @@ class MainTheme {
     useMaterial3: true,
     brightness: Brightness.light,
     textTheme: lightTextTheme,
-    scaffoldBackgroundColor: MyColors.bgDark,
+    scaffoldBackgroundColor: MyColors.bgLight,
     // primarySwatch: Colors.deepOrange,
     primaryColor: MyColors.primary,
     appBarTheme: AppBarTheme(

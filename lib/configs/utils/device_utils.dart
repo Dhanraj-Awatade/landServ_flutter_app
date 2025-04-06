@@ -4,19 +4,24 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class DeviceUtils {
+  DeviceUtils._();
+
   static void hideKeyboard(BuildContext context) {
     FocusScope.of(context).requestFocus(FocusNode());
   }
 
-  static Future<void> setStatusBarColour(Color color) async{
+  static bool isDarkMode(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.dark;
+  }
+
+  static Future<void> setStatusBarColour(Color color) async {
     SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: color)
-    );
+        SystemUiOverlayStyle(statusBarColor: color));
   }
 
   static bool isLandscape(BuildContext context) {
     final viewInsets = View.of(context).viewInsets;
-    return viewInsets.bottom==0;
+    return viewInsets.bottom == 0;
   }
 
   static bool isPortrait(BuildContext context) {
@@ -24,37 +29,39 @@ class DeviceUtils {
     return viewInsets.bottom != 0;
   }
 
-  static void setFullScreen(bool enable){
-    SystemChrome.setEnabledSystemUIMode(enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
+  static void setFullScreen(bool enable) {
+    SystemChrome.setEnabledSystemUIMode(
+        enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
   }
 
-  static double getScreenHeight(){
+  static double getScreenHeight() {
     return MediaQuery.of(Get.context!).size.height;
   }
 
-  static double getScreenWidth(){
+  static double getScreenWidth() {
     return MediaQuery.of(Get.context!).size.width;
   }
 
-  static double getPixelRatio(){
+  static double getPixelRatio() {
     return MediaQuery.of(Get.context!).devicePixelRatio;
   }
 
-  static double getStatusBarHeight(){
+  static double getStatusBarHeight() {
     return MediaQuery.of(Get.context!).padding.top;
   }
 
-  static double getKeyboardHeight(){
+  static double getKeyboardHeight() {
     final viewInsets = MediaQuery.of(Get.context!).viewInsets;
-  return viewInsets.bottom;
+    return viewInsets.bottom;
   }
 
-  static Future<bool> isKeyboardVisible() async{
+  static Future<bool> isKeyboardVisible() async {
     final viewInsets = MediaQuery.of(Get.context!).viewInsets;
     return viewInsets.bottom > 0;
   }
 
-  static Future<bool> isPhysicalDevice() async{
-    return defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS;
+  static Future<bool> isPhysicalDevice() async {
+    return defaultTargetPlatform == TargetPlatform.android ||
+        defaultTargetPlatform == TargetPlatform.iOS;
   }
-}  
+}

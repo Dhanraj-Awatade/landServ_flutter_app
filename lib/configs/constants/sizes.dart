@@ -3,6 +3,13 @@ import 'package:flutter/cupertino.dart';
 class CustomSizes {
   CustomSizes._();
 
+  // Padding & Margins
+  static const double xs = 4;
+  static const double sm = 8;
+  static const double md = 16;
+  static const double lg = 24;
+  static const double xl = 32;
+
   // Paddings & Border Widths
   static const safetyPadding = EdgeInsets.all(18);
   static const listPadding = EdgeInsets.all(18);
@@ -25,6 +32,7 @@ class CustomSizes {
 
   // Heights
   // static const double inputHeight = 50;
+  static const double appBarHeight = 56;
 
   //spaces
   static const double defaultSpace = 20;
