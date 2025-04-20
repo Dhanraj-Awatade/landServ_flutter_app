@@ -11,6 +11,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = DeviceUtils.isDarkMode(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -28,8 +29,21 @@ class LoginPage extends StatelessWidget {
               //Text
               Text(
                 TextStrings.loginText,
-                style: Theme.of(context).textTheme.headlineLarge,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
+              SizedBox(height: CustomSizes.sm),
+              //Text Field
+              Text(
+                TextStrings.loginSubText,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              Form(
+                child: Column(
+                  children: [
+                    TextFormField(),
+                  ],
+                ),
+              )
             ],
           ),
         ),
