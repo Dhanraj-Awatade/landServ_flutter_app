@@ -122,6 +122,9 @@ flutter:
           style: italic
         - asset: assets/fonts/Lato/Lato-Light.ttf
           weight: 200
-  #
+    - family: Varela Round
+      fonts:
+        - asset: assets/fonts/Varela_Round/VarelaRound-Regular.ttf
+        #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

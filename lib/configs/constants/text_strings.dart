@@ -1,6 +1,15 @@
 class TextStrings {
   TextStrings._();
 
-  static const String loginText = "Login";
-  static const String loginSubText = "Please login to continue";
+  // Login Page Texts
+  static const String loginText = "Hello there!";
+  static const String loginSubText =
+      "Sign-in to get solutions to all of your land problems.";
+  static const String email = "Email";
+  static const String password = "Password";
+  static const String loginButton = "Login";
+  static const String forgotPassword = "Forgot Password?";
+  static const String signUp = "Sign Up";
+  static const String loginWith = "Login with";
+  static const String google = "Google";
 }
