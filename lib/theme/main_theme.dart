@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mahareal_flutter_app/configs/constants/colors.dart';
-import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 import 'package:mahareal_flutter_app/theme/custom_button_theme.dart';
 import 'package:mahareal_flutter_app/theme/custom_input_theme.dart';
 import 'package:mahareal_flutter_app/theme/text_themes.dart';

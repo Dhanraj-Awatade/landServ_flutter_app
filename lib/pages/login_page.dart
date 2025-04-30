@@ -42,7 +42,8 @@ class LoginPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: CustomSizes.spaceBtwSections),
+                padding: const EdgeInsets.symmetric(
+                    vertical: CustomSizes.spaceBtwSections),
                 child: Form(
                   child: Column(
                     children: [
@@ -52,9 +53,12 @@ class LoginPage extends StatelessWidget {
                         autofocus: false,
                         enableSuggestions: false,
                         textInputAction: TextInputAction.next,
-                        onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
-                        decoration:
-                            InputDecoration(prefixIcon: Icon(Iconsax.direct_right1), labelText: TextStrings.email),
+                        onTapOutside: (event) =>
+                            FocusManager.instance.primaryFocus?.unfocus(),
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Iconsax.direct_right1),
+                          labelText: TextStrings.userName,
+                        ),
                       ),
                       SizedBox(height: CustomSizes.spaceBtwInputs),
                       TextFormField(
@@ -64,7 +68,8 @@ class LoginPage extends StatelessWidget {
                         enableSuggestions: false,
                         textInputAction: TextInputAction.done,
                         obscureText: true,
-                        onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
+                        onTapOutside: (event) =>
+                            FocusManager.instance.primaryFocus?.unfocus(),
                         decoration: InputDecoration(
                           prefixIcon: Icon(Iconsax.lock),
                           labelText: TextStrings.password,
