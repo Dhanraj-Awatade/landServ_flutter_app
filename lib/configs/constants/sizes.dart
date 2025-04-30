@@ -13,27 +13,28 @@ class CustomSizes {
   // Paddings
   static const safetyPadding = EdgeInsets.all(18);
   static const listPadding = EdgeInsets.all(18);
-  static const inputPadding =
-      EdgeInsets.fromLTRB(CustomSizes.defaultSpace, 16, 0, 16);
+  static const inputPadding = EdgeInsets.fromLTRB(CustomSizes.defaultSpace, 16, 0, 16);
 
   // Border Widths
   static const double defaultBorderWidth = 2;
   static const double smallBorderWidth = 1;
+  static const double secondaryButtonBorderWidth = 0.5;
 
   //Elevations
-  static const double buttonElevation = 3;
+  static const double buttonElevation = 0;
 
   // Font Sizes
   static const double smallFont = 12;
   static const double regularFont = 18;
   static const double titleFont = 25;
   static const double largeFont = 30;
-  static const double buttonLargeFont = 18;
+  static const double buttonLargeFont = 16;
 
   // Radii
   static const maxCircularRadius = Radius.circular(25);
   static final maxCircularBorderRadius = BorderRadius.circular(25);
-  static final buttonRadius = BorderRadius.circular(12);
+  static final buttonRadius = BorderRadius.circular(22);
+  static final inputBorderRadius = BorderRadius.circular(22);
 
   // Heights
   static const double inputHeight = 46;

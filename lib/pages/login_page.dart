@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:mahareal_flutter_app/components/primary_elevated_button.dart';
+import 'package:mahareal_flutter_app/components/secondary_elevated_button.dart';
+import 'package:mahareal_flutter_app/configs/constants/colors.dart';
 // import 'package:mahareal_flutter_app/configs/constants/image_strings.dart';
 import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 import 'package:mahareal_flutter_app/configs/constants/styles/spacing_styles.dart';
 import 'package:mahareal_flutter_app/configs/constants/text_strings.dart';
-// import 'package:mahareal_flutter_app/configs/utils/device_utils.dart';
+import 'package:mahareal_flutter_app/configs/utils/device_utils.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // final dark = DeviceUtils.isDarkMode(context);
+    final isDark = DeviceUtils.isDarkMode(context);
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -23,10 +26,10 @@ class LoginPage extends StatelessWidget {
               // ToDo: Insert Logo Image here
               // Image(
               //   image: AssetImage(
-              //     dark ? TImages.darkLogo : TImages.lightLogo,
+              //     isDark ? TImages.darkLogo : TImages.lightLogo,
               //   ),
               // ),
-              // SizedBox(height: CustomSizes.spaceBtwSections),
+              SizedBox(height: CustomSizes.spaceBtwSections),
               //Text
               Text(
                 TextStrings.loginText,
@@ -39,8 +42,7 @@ class LoginPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: CustomSizes.spaceBtwSections),
+                padding: const EdgeInsets.symmetric(vertical: CustomSizes.spaceBtwSections),
                 child: Form(
                   child: Column(
                     children: [
@@ -50,11 +52,9 @@ class LoginPage extends StatelessWidget {
                         autofocus: false,
                         enableSuggestions: false,
                         textInputAction: TextInputAction.next,
-                        onTapOutside: (event) =>
-                            FocusManager.instance.primaryFocus?.unfocus(),
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Iconsax.direct_right1),
-                            labelText: TextStrings.email),
+                        onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
+                        decoration:
+                            InputDecoration(prefixIcon: Icon(Iconsax.direct_right1), labelText: TextStrings.email),
                       ),
                       SizedBox(height: CustomSizes.spaceBtwInputs),
                       TextFormField(
@@ -64,8 +64,7 @@ class LoginPage extends StatelessWidget {
                         enableSuggestions: false,
                         textInputAction: TextInputAction.done,
                         obscureText: true,
-                        onTapOutside: (event) =>
-                            FocusManager.instance.primaryFocus?.unfocus(),
+                        onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
                         decoration: InputDecoration(
                           prefixIcon: Icon(Iconsax.lock),
                           labelText: TextStrings.password,
@@ -83,22 +82,51 @@ class LoginPage extends StatelessWidget {
                       SizedBox(height: CustomSizes.spaceBtwInputs),
                       SizedBox(
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child: PrimaryElevatedButton(
+                          textChild: TextStrings.loginButton,
+                          leadingIcon: Iconsax.arrow_circle_right,
+                          isGradient: false,
+                          // isEnabled: false,
                           onPressed: () {},
-                          child: Text(TextStrings.loginButton),
                         ),
                       ),
                       SizedBox(height: CustomSizes.sm),
                       SizedBox(
                         width: double.infinity,
-                        child: OutlinedButton(
+                        child: SecondaryElevatedButton(
                           onPressed: () {},
-                          child: Text(TextStrings.signUp),
+                          textChild: TextStrings.signUp,
+                          // leadingIcon: Iconsax.add,
                         ),
                       ),
                     ],
                   ),
                 ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: Divider(
+                      color: isDark ? MyColors.secondary : MyColors.primary,
+                      thickness: 0.5,
+                      indent: 60,
+                      endIndent: 10,
+                    ),
+                  ),
+                  Text(
+                    TextStrings.loginDividerText,
+                    style: Theme.of(context).textTheme.labelSmall,
+                  ),
+                  Flexible(
+                    child: Divider(
+                      color: isDark ? MyColors.secondary : MyColors.primary,
+                      thickness: 0.5,
+                      indent: 10,
+                      endIndent: 60,
+                    ),
+                  )
+                ],
               )
             ],
           ),

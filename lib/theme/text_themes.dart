@@ -5,6 +5,10 @@ TextTheme lightTextTheme = TextTheme(
   headlineMedium: TextStyle(
     fontFamily: 'Rose',
   ),
+  labelSmall: TextStyle(
+    // fontFamily: 'Rose',
+    color: MyColors.mutedGrey,
+  ),
 
   // headlineSmall: TextStyle(
   //   fontFamily: 'Lato',
