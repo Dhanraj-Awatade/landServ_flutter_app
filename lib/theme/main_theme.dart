@@ -18,6 +18,7 @@ class MainTheme {
     outlinedButtonTheme: CustomButtonThemes.lightOutlinedButtonTheme,
     // scaffoldBackgroundColor: MyColors.bgLight, // use materialYou
     inputDecorationTheme: CustomInputThemes.lightInputTheme,
+    dropdownMenuTheme: DropdownMenuThemeData(inputDecorationTheme: CustomInputThemes.lightInputTheme),
 
     // primarySwatch: Colors.deepOrange,
     // appBarTheme: AppBarTheme(

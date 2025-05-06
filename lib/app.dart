@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:mahareal_flutter_app/components/navigator.dart';
-import 'package:mahareal_flutter_app/configs/constants/colors.dart';
 import 'package:mahareal_flutter_app/configs/constants/routes.dart';
-// import 'package:mahareal_flutter_app/pages/login_page.dart';
 import 'package:mahareal_flutter_app/theme/main_theme.dart';
+// import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        systemStatusBarContrastEnforced: true));
-    return MaterialApp(
+    return
+        // MultiProvider(
+        // providers: [],
+        // child:
+        MaterialApp(
       title: 'MahaReal',
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       theme: MainTheme.lightTheme,
       darkTheme: MainTheme.darkTheme,
       debugShowCheckedModeBanner: false,
@@ -24,6 +23,7 @@ class App extends StatelessWidget {
       home: MyNavBar(), //LoginPage(),
       // routes: MyRoutes.allRoutes,
       onGenerateRoute: (settings) => MyRoutes.allRoutes(settings),
+      // ),
     );
   }
 }

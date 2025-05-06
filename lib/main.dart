@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mahareal_flutter_app/app.dart';
-
 
 // Flutter app initializes here
 void main() {
@@ -10,6 +10,8 @@ void main() {
   // Todo: Initialize Firebase
   // Todo: Initialize Authentication
 
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.transparent, systemStatusBarContrastEnforced: false));
+
   runApp(const App());
 }
-

@@ -12,13 +12,23 @@ class CustomSizes {
 
   // Paddings
   static const safetyPadding = EdgeInsets.all(18);
+  static const safetyPaddingWithAppBar = EdgeInsets.fromLTRB(18, 56, 18, 18);
   static const listPadding = EdgeInsets.all(18);
   static const inputPadding = EdgeInsets.fromLTRB(CustomSizes.defaultSpace, 16, 0, 16);
+
+  // Button Sizes
+  static const double categoryButtonSize = 66;
+  static const double categoryButtonIconSize = 20;
 
   // Border Widths
   static const double defaultBorderWidth = 2;
   static const double smallBorderWidth = 1;
   static const double secondaryButtonBorderWidth = 0.5;
+
+  // Heights
+  static const double inputHeight = 46;
+  static const double appBarHeight = 56;
+  static const double buttonHeight = 46;
 
   //Elevations
   static const double buttonElevation = 0;
@@ -35,11 +45,6 @@ class CustomSizes {
   static final maxCircularBorderRadius = BorderRadius.circular(25);
   static final buttonRadius = BorderRadius.circular(22);
   static final inputBorderRadius = BorderRadius.circular(22);
-
-  // Heights
-  static const double inputHeight = 46;
-  static const double appBarHeight = 56;
-  static const double buttonHeight = 46;
 
   //spaces
   static const double defaultSpace = 20;

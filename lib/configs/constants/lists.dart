@@ -6,18 +6,9 @@ class MyLists {
   MyLists._();
 
 /* Lists */
-  static List homePageCategoryLists = [
-    allServicesDescList,
-    landDocumentsList,
-    landServicesList,
-    surveysList
-  ];
+  static List homePageCategoryLists = [allServicesDescList, landDocumentsList, landServicesList, surveysList];
 
-  static const List bottomNavBarRouteList = [
-    HomePage(),
-    VaultPage(),
-    ConsultPage()
-  ];
+  static const List bottomNavBarRouteList = [HomePage(), VaultPage(), ConsultPage()];
 
   static const List servicesIconList = [
     "First",
@@ -26,10 +17,9 @@ class MyLists {
   ];
 
 /* Services Lists */
-  static List allServicesDescList =
-      landDocumentsList + landServicesList + surveysList;
+  static List allServicesDescList = landDocumentsList + landServicesList + surveysList;
 
-  static const List landDocumentsList = [
+  static const List<String> landDocumentsList = [
     "7/12 Services",
     "Index 2",
     "Mutation (Ferfar)",
@@ -39,7 +29,7 @@ class MyLists {
     "Zone Certificate",
   ];
 
-  static const List landServicesList = [
+  static const List<String> landServicesList = [
     "Property Search",
     "Apli Chavadi",
     "Bhu Nakasha",
@@ -52,7 +42,7 @@ class MyLists {
     "Civil Court Case Status",
   ];
 
-  static const List surveysList = [
+  static const List<String> surveysList = [
     "First",
     "Sec",
     "Third",
@@ -61,5 +51,8 @@ class MyLists {
 /* Services Dropdown Lists */
   static const Map<String, List<String>> servicesDropdownLists = {
     // ToDo: Prepare list of Dropdowns all Services
+    "landDocumentsList": landDocumentsList,
+    "landServicesList": landServicesList,
+    "surveysList": surveysList
   };
 }

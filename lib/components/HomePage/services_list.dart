@@ -16,21 +16,20 @@ class ServicesList extends StatelessWidget {
         return Padding(
           padding: CustomSizes.listPadding,
           child: ElevatedButton(
-            style: ButtonStyle(
-              iconAlignment: IconAlignment.start,
-              alignment: Alignment.centerLeft,
-              backgroundColor: WidgetStatePropertyAll(MyColors.lightContainer),
-              elevation: WidgetStatePropertyAll(CustomSizes.buttonElevation),
-              shadowColor: WidgetStatePropertyAll(MyColors.tertiary),
-              overlayColor: WidgetStatePropertyAll(MyColors.secondary),
-              splashFactory: InkRipple.splashFactory,
-            ),
+            style: ElevatedButton.styleFrom(
+                iconAlignment: IconAlignment.start,
+                alignment: Alignment.centerLeft,
+                backgroundColor: MyColors.lightContainer,
+                elevation: CustomSizes.buttonElevation,
+                shadowColor: MyColors.tertiary,
+                overlayColor: MyColors.secondary,
+                splashFactory: InkRipple.splashFactory,
+                side: BorderSide(color: MyColors.mutedGrey)),
             onPressed: () => {
               // ScaffoldMessenger.of(context).showSnackBar(mySnackBar(
               // 'Navigating to ${MyLists.homePageCategoryLists[categoryIndex][index]}')),
-              Navigator.pushNamed(context, '/service', arguments: {
-                "title": MyLists.homePageCategoryLists[categoryIndex][index]
-              })
+              Navigator.pushNamed(context, '/service',
+                  arguments: {"title": MyLists.homePageCategoryLists[categoryIndex][index]})
             },
             child: Padding(
               padding: CustomSizes.safetyPadding,

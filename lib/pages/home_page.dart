@@ -1,14 +1,12 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:mahareal_flutter_app/components/HomePage/homepage_categories.dart';
+import 'package:mahareal_flutter_app/components/HomePage/main_service_button.dart';
+import 'package:mahareal_flutter_app/components/HomePage/profile_button.dart';
+import 'package:mahareal_flutter_app/components/HomePage/search_bars.dart';
 import 'package:mahareal_flutter_app/components/HomePage/services_list.dart';
 import 'package:mahareal_flutter_app/components/text_widgets.dart';
 import 'package:mahareal_flutter_app/configs/constants/colors.dart';
 import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
-import 'package:mahareal_flutter_app/configs/constants/text_strings.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,14 +28,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      top: false,
       child: Scaffold(
         backgroundColor: MyColors.primary,
         body: Column(
           children: [
+            // SizedBox(
+            //   height: 40,
+            // ),
             Column(
               children: [
                 Padding(
-                  padding: CustomSizes.safetyPadding,
+                  padding: CustomSizes.safetyPaddingWithAppBar,
                   child: SizedBox(
                     width: double.infinity,
                     child: Column(
@@ -46,55 +48,12 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
-                          children: [
-                            ConstantTextWidgets.titleTextWidget,
-                            FloatingActionButton(
-                              onPressed: () =>
-                                  {Navigator.pushNamed(context, '/profile')},
-                              tooltip: "Profile",
-                              shape: const CircleBorder(
-                                side: BorderSide(
-                                  width: CustomSizes.defaultBorderWidth,
-                                  color: MyColors.secondary,
-                                ),
-                              ),
-                              backgroundColor: MyColors.lightTransluscent,
-                              foregroundColor: MyColors.primary,
-                              child: const Icon(Iconsax.user),
-                            )
-                          ],
+                          children: [ConstantTextWidgets.titleTextWidget, profileButton(context)],
                         ),
                         const SizedBox(
                           height: CustomSizes.defaultSpace,
                         ),
-                        TextField(
-                          decoration: InputDecoration(
-                              suffixIcon: Icon(LucideIcons.search),
-                              contentPadding: CustomSizes.safetyPadding,
-                              label: Text(TextStrings.searchBarText,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall // TextStyle(fontSize: CustomSizes.smallFont),
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                    CustomSizes.maxCircularRadius),
-                                borderSide: BorderSide.none,
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                    CustomSizes.maxCircularRadius,
-                                  ),
-                                  borderSide: BorderSide(
-                                      width: CustomSizes.smallBorderWidth,
-                                      color: MyColors.primary)),
-                              fillColor: MyColors.lightTransluscent,
-                              filled: true,
-                              floatingLabelBehavior:
-                                  FloatingLabelBehavior.never),
-                          onTapOutside: (event) =>
-                              FocusManager.instance.primaryFocus?.unfocus(),
-                        )
+                        SearchBars.homepageSearchBar(context),
                       ],
                     ),
                   ),
@@ -102,32 +61,28 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    HomepageCategory(
-                      // isSelected: true,
+                    MainServiceButton(
                       index: 0,
                       currentIndex: _currentSelectedSectionIndex,
                       setIndex: _selectSection,
-                      title: "All Services",
+                      title: "All",
                       imageAsset: 'assets/icons/all_services.png',
                     ),
-                    HomepageCategory(
-                      // isSelected: false,
+                    MainServiceButton(
                       index: 1,
                       currentIndex: _currentSelectedSectionIndex,
                       setIndex: _selectSection,
-                      title: "Land Documents",
+                      title: "Documents",
                       imageAsset: 'assets/icons/documents.png',
                     ),
-                    HomepageCategory(
-                      // isSelected: false,
+                    MainServiceButton(
                       index: 2,
                       currentIndex: _currentSelectedSectionIndex,
                       setIndex: _selectSection,
-                      title: "Land Services",
+                      title: "Services",
                       imageAsset: 'assets/icons/services.png',
                     ),
-                    HomepageCategory(
-                      // isSelected: false,
+                    MainServiceButton(
                       index: 3,
                       currentIndex: _currentSelectedSectionIndex,
                       setIndex: _selectSection,
@@ -149,11 +104,8 @@ class _HomePageState extends State<HomePage> {
                   color: MyColors.bgLight,
                 ),
                 width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
-                  child: ServicesList(
-                    categoryIndex: _currentSelectedSectionIndex,
-                  ),
+                child: ServicesList(
+                  categoryIndex: _currentSelectedSectionIndex,
                 ),
               ),
             ),

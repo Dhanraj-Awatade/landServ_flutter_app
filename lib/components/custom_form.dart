@@ -29,8 +29,8 @@ class _CustomFormState extends State<CustomForm> {
             DropdownMenu(
               label: Text(
                 "DropDown Menu",
-                style: TextStyle(
-                    color: MyColors.secondary, fontWeight: FontWeight.bold),
+                // style: TextStyle(
+                //     color: MyColors.secondary, fontWeight: FontWeight.bold),
               ),
               hintText: "Select a value",
               enableSearch: true,
@@ -46,6 +46,7 @@ class _CustomFormState extends State<CustomForm> {
                 ),
               ),
               dropdownMenuEntries: [
+                // MyLists.servicesDropdownLists.map((e)=> DropdownMenuEntry(value: e, label: e)),
                 DropdownMenuEntry(value: 1, label: 'Hehe'),
                 DropdownMenuEntry(value: 2, label: 'Hihi'),
                 DropdownMenuEntry(value: 3, label: 'Hoho'),
@@ -60,8 +61,8 @@ class _CustomFormState extends State<CustomForm> {
             ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(mySnackBar(
-                        "Form is Valid")); //ToDo: Implement Server Action here
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(mySnackBar("Form is Valid")); //ToDo: Implement Server Action here
                   }
                 },
                 child: Text("Validate Form"))
