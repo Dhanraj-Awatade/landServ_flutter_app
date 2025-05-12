@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mahareal_flutter_app/app.dart';
 
 // Flutter app initializes here
@@ -13,5 +14,5 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.transparent, systemStatusBarContrastEnforced: false));
 
-  runApp(const App());
+  runApp(const ProviderScope(child: App()));
 }

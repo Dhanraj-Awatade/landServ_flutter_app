@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mahareal_flutter_app/components/appbar.dart';
-import 'package:mahareal_flutter_app/components/custom_dropdown_form_button.dart';
-import 'package:mahareal_flutter_app/components/custom_text_form_field.dart';
-import 'package:mahareal_flutter_app/components/primary_elevated_button.dart';
-import 'package:mahareal_flutter_app/configs/constants/colors.dart';
-import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 
 final formProvider = StateProvider<FormData>((ref) => FormData());
 
@@ -30,11 +24,11 @@ class FormData {
   bool isLoading = false;
 }
 
-class ServicePage extends ConsumerWidget {
+class LandServiceForm extends ConsumerWidget {
   final _formKey = GlobalKey<FormState>();
   final ImagePicker _picker = ImagePicker();
-  final String title;
-  ServicePage({super.key, required this.title});
+
+  LandServiceForm({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -48,7 +42,6 @@ class ServicePage extends ConsumerWidget {
         await Future.delayed(const Duration(seconds: 2));
 
         ref.read(formProvider.notifier).update((state) => state..isLoading = false);
-
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Form Submitted Successfully')));
       } else {
@@ -57,86 +50,92 @@ class ServicePage extends ConsumerWidget {
     }
 
     return Scaffold(
-      appBar: myAppBar(title, context),
-      backgroundColor: MyColors.secondary, //ToDo: Make dynamically primary for dark mode
+      appBar: AppBar(
+        title: const Text('Request Land Document'),
+      ),
       body: Padding(
-        padding: CustomSizes.safetyPadding,
+        padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomTextFormField(
-                  label: 'Full Name',
-                  hint: "Enter your full legal name",
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Full Name'),
                   onChanged: (value) => formData.fullName = value,
                   validator: (value) => value!.isEmpty ? 'Please enter your name' : null,
                 ),
-                CustomTextFormField(
-                  label: 'Mobile Number',
-                  hint: "Enter your mobile number",
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Mobile Number'),
                   onChanged: (value) => formData.mobileNumber = value,
                   validator: (value) => value!.length != 10 ? 'Enter a valid 10-digit number' : null,
                 ),
-                CustomTextFormField(
-                  hint: 'Enter your email address',
-                  label: 'Email (Optional)',
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Email (Optional)'),
                   onChanged: (value) => formData.email = value,
                 ),
-                CustomTextFormField(
-                  hint: 'Enter your address',
-                  label: 'Address',
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Address'),
                   maxLines: 3,
                   onChanged: (value) => formData.address = value,
                 ),
-                CustomTextFormField(
-                  hint: 'Enter the survey number',
-                  label: 'Survey Number',
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Survey Number'),
                   onChanged: (value) => formData.surveyNumber = value,
                 ),
-                CustomTextFormField(
-                  hint: 'Enter the village name',
-                  label: 'Village Name',
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Village Name'),
                   onChanged: (value) => formData.villageName = value,
                 ),
-                CustomDropdownFormButton(
-                  label: 'Taluka',
-                  items: ['Taluka 1', 'Taluka 2'],
+                DropdownButtonFormField<String>(
+                  decoration: const InputDecoration(labelText: 'Taluka'),
+                  items: ['Taluka 1', 'Taluka 2'].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
                   onChanged: (value) => formData.taluka = value ?? '',
                 ),
-                CustomDropdownFormButton(
-                  label: 'District',
-                  items: ['District 1', 'District 2'],
+                DropdownButtonFormField<String>(
+                  decoration: const InputDecoration(labelText: 'District'),
+                  items: ['District 1', 'District 2'].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
                   onChanged: (value) => formData.district = value ?? '',
                 ),
-                PrimaryElevatedButton(
+                ElevatedButton(
                   onPressed: () async {
                     final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
                     ref.read(formProvider.notifier).update((state) => state..aadhaarCard = pickedFile);
                   },
-                  isGradient: false,
-                  textChild: 'Upload Aadhaar Card',
+                  child: const Text('Upload Aadhaar Card'),
                 ),
-                PrimaryElevatedButton(
+                ElevatedButton(
                   onPressed: () async {
                     final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
                     ref.read(formProvider.notifier).update((state) => state..addressProof = pickedFile);
                   },
-                  isGradient: false,
-                  textChild: 'Upload Address Proof',
+                  child: const Text('Upload Address Proof'),
                 ),
-                PrimaryElevatedButton(
+                ElevatedButton(
                   onPressed: () async {
                     final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
                     ref.read(formProvider.notifier).update((state) => state..landDocument = pickedFile);
                   },
-                  isGradient: false,
-                  textChild: 'Upload Land Document (Optional)',
+                  child: const Text('Upload Land Document (Optional)'),
                 ),
-                CustomDropdownFormButton(
-                  label: 'Payment Mode',
-                  items: ['UPI', 'Net Banking', 'Credit/Debit Card'],
+                DropdownButtonFormField<String>(
+                  decoration: const InputDecoration(labelText: 'Payment Mode'),
+                  items: ['UPI', 'Net Banking', 'Credit/Debit Card'].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
                   onChanged: (value) => formData.paymentMode = value ?? '',
                 ),
                 CheckboxListTile(
@@ -147,10 +146,9 @@ class ServicePage extends ConsumerWidget {
                 ),
                 formData.isLoading
                     ? const CircularProgressIndicator()
-                    : PrimaryElevatedButton(
-                        isGradient: false,
+                    : ElevatedButton(
                         onPressed: submitForm,
-                        textChild: 'Submit',
+                        child: const Text('Submit'),
                       ),
               ],
             ),

@@ -33,7 +33,7 @@ class MyRoutes {
           return MaterialPageRoute(
               builder: (context) => args['title'] != null
                   ? ServicePage(title: args['title'])
-                  : const ServicePage(
+                  : ServicePage(
                       title: "Service Page",
                     ));
         }

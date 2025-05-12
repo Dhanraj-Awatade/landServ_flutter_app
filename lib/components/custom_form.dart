@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mahareal_flutter_app/components/snackbar.dart';
-import 'package:mahareal_flutter_app/components/text_form_field.dart';
+import 'package:mahareal_flutter_app/components/custom_text_form_field.dart';
 import 'package:mahareal_flutter_app/configs/constants/colors.dart';
 import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 

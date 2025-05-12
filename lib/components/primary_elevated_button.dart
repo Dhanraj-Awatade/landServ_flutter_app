@@ -20,21 +20,25 @@ class PrimaryElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: isGradient ? MyColors.buttonGradientColor : null,
-        borderRadius: CustomSizes.buttonRadius,
-        // border: Border.symmetric(vertical: BorderSide.none, horizontal: BorderSide.none),
-      ),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        child: Text.rich(
-          TextSpan(
-            children: [
-              TextSpan(text: textChild),
-              TextSpan(text: " "),
-              WidgetSpan(child: Icon(leadingIcon)),
-            ],
+    return Padding(
+      padding: const EdgeInsets.all(CustomSizes.sm),
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: isGradient ? MyColors.buttonGradientColor : null,
+          borderRadius: CustomSizes.buttonRadius,
+          // border: Border.symmetric(vertical: BorderSide.none, horizontal: BorderSide.none),
+        ),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          child: Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(text: textChild),
+                TextSpan(text: " "),
+                WidgetSpan(child: Icon(leadingIcon)),
+              ],
+            ),
           ),
         ),
       ),

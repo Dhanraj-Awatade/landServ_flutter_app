@@ -19,6 +19,9 @@ class MainTheme {
     // scaffoldBackgroundColor: MyColors.bgLight, // use materialYou
     inputDecorationTheme: CustomInputThemes.lightInputTheme,
     dropdownMenuTheme: DropdownMenuThemeData(inputDecorationTheme: CustomInputThemes.lightInputTheme),
+    checkboxTheme: CheckboxThemeData(
+      checkColor: WidgetStateProperty.all(MyColors.primary),
+    ),
 
     // primarySwatch: Colors.deepOrange,
     // appBarTheme: AppBarTheme(
