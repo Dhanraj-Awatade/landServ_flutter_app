@@ -1,7 +1,6 @@
 {
   "name": "mahareal_flutter_app",
   "main": "dist/server.js",
-  "packageManager": "yarn@4.9.1",
   "scripts": {
     "dev": "ts-node-dev --respawn backend/src/server.ts",
     "build": "tsc",
