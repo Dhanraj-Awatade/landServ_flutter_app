@@ -7,9 +7,10 @@ RUN apt update && apt install -y libc6 fuse curl bash gnupg lsb-release
 WORKDIR /app
 
 COPY package.json ./
+RUN corepack enable
 RUN yarn install --frozen-lockfile
 
-RUN yarn build
+RUN yarn tsc
 
 # Create system group and user first
 RUN addgroup --system --gid 1001 nodejs
