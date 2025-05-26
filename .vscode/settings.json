@@ -1,5 +1,5 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
+   "typescript.tsdk": "node_modules\\typescript\\lib",
     "editor.copyWittruehSyntaxHighlighting": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.emptySelectionClipboard": false,
@@ -52,6 +52,8 @@
 
     "search.useIgnoreFiles": false,
     "search.exclude": {
+        "**/.yarn": true,
+    "**/.pnp.*": true,
         // Hide everything in /vendor, except the "laravel" and "livewire" folder.
         "**/vendor/{[^l],?[^ai]}*": true,
         // Hide everything in /public, except "index.php"
@@ -196,8 +198,8 @@
 //         "file:///home/dhanraj-awatade/Projects/vscode_custom_css.css",
 //         "file:///home/dhanraj-awatade/Projects/vscode_custom_js.js"
     ],
-    "workbench.colorTheme": "Vira Ocean",
-    "workbench.iconTheme": "vira-icons-ocean",
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.iconTheme": "a-file-icon-vscode",
     "workbench.sideBar.location": "left",
     "material-icon-theme.files.color": "#42a5f5",
     "workbench.tree.enableStickyScroll": false
