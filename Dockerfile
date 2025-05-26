@@ -13,10 +13,10 @@ RUN yarn install --immutable
 RUN yarn tsc
 
 # Create system group and user first
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 user
+# RUN addgroup --system --gid 1001 nodejs
+# RUN adduser --system --uid 1001 user
 
-USER user
+# USER user
 
 EXPOSE 3000
 
