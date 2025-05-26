@@ -6,7 +6,7 @@ RUN apt update && apt install -y libc6 fuse curl bash gnupg lsb-release
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY . .
 RUN corepack enable
 RUN yarn install --immutable
 

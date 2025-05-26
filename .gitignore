@@ -52,6 +52,7 @@ app.*.map.json
 .env*
 pubspec.lock
 /node_modules
+/backend/dist
 
 
 # Swap the comments on the following lines if you wish to use zero-installs
