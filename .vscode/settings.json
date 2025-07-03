@@ -198,7 +198,7 @@
 //         "file:///home/dhanraj-awatade/Projects/vscode_custom_css.css",
 //         "file:///home/dhanraj-awatade/Projects/vscode_custom_js.js"
     ],
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "Bear Theme",
     "workbench.iconTheme": "a-file-icon-vscode",
     "workbench.sideBar.location": "left",
     "material-icon-theme.files.color": "#42a5f5",

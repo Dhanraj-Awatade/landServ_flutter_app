@@ -2,7 +2,8 @@ FROM node:22.8.0 AS base
 
 FROM base AS deps
 # Install dependencies
-RUN apt update && apt install -y libc6 fuse curl bash gnupg lsb-release
+RUN apt update
+# && apt install -y libc6 fuse curl bash gnupg lsb-release
 
 WORKDIR /app
 
