@@ -17,7 +17,7 @@ class MyRoutes {
   //   '/service': (context) => const ServicePage(),
   // };
   static allRoutes(settings) {
-    final args = settings.arguments as Map;
+    final args = settings.arguments as Map? ?? {};
 
     switch (settings.name) {
       case '/home':
@@ -32,9 +32,9 @@ class MyRoutes {
         {
           return MaterialPageRoute(
               builder: (context) => args['title'] != null
-                  ? ServicePage(title: args['title'])
+                  ? ServicePage(serviceTitle: args['title'])
                   : ServicePage(
-                      title: "Service Page",
+                      serviceTitle: "Service Page",
                     ));
         }
       default:

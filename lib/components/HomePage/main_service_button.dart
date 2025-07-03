@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:mahareal_flutter_app/configs/constants/colors.dart';
+import 'package:mahareal_flutter_app/configs/constants/enums.dart';
 import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 
 class MainServiceButton extends StatelessWidget {
   final String imageAsset;
   final String title;
-  final int index;
-  final int currentIndex;
+  final HomePageCategory category;
+  final HomePageCategory currentCategory;
   final Function setIndex;
 
   const MainServiceButton({
     super.key,
     required this.imageAsset,
     required this.title,
-    required this.index,
-    required this.currentIndex,
+    required this.category,
+    required this.currentCategory,
     required this.setIndex,
   });
 
   @override
   Widget build(BuildContext context) {
-    final isSelected = index == currentIndex;
+    final isSelected = category == currentCategory;
 
     return Column(
       children: [
@@ -28,14 +29,15 @@ class MainServiceButton extends StatelessWidget {
           style: OutlinedButton.styleFrom(
             iconSize: CustomSizes.categoryButtonIconSize,
             fixedSize: Size.square(CustomSizes.categoryButtonSize),
-            backgroundColor: isSelected ? MyColors.tertiary : MyColors.lightContainer,
+            backgroundColor:
+                isSelected ? MyColors.tertiary : MyColors.lightContainer,
             padding: CustomSizes.safetyPadding,
             side: BorderSide(
               color: isSelected ? MyColors.textSecondary : MyColors.textWhite,
               width: CustomSizes.smallBorderWidth,
             ),
           ),
-          onPressed: () => setIndex(index),
+          onPressed: () => setIndex(category),
           child: Image.asset(
             fit: BoxFit.contain,
             semanticLabel: title,

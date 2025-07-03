@@ -37,6 +37,7 @@ class CustomSizes {
   static const double smallFont = 12;
   static const double regularFont = 18;
   static const double titleFont = 25;
+  static const double appbarTitleFont = 20;
   static const double largeFont = 30;
   static const double buttonLargeFont = 16;
 

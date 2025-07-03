@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:mahareal_flutter_app/configs/constants/colors.dart';
 import 'package:mahareal_flutter_app/configs/constants/lists.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:mahareal_flutter_app/configs/utils/device_utils.dart';
 
 class MyNavBar extends StatefulWidget {
   const MyNavBar({super.key});
@@ -23,8 +24,14 @@ class _MyNavBarState extends State<MyNavBar> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = DeviceUtils.isDarkMode(context);
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(statusBarColor: Colors.transparent, systemStatusBarContrastEnforced: false),
+      value: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        systemStatusBarContrastEnforced: false,
+        statusBarIconBrightness: isDark ? Brightness.dark : Brightness.light,
+      ),
       child: Scaffold(
         extendBodyBehindAppBar: true,
         bottomNavigationBar: GNav(
