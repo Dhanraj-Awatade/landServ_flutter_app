@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:mahareal_flutter_app/configs/constants/colors.dart';
-import 'package:mahareal_flutter_app/configs/constants/lists.dart';
+import 'package:mahareal_flutter_app/configs/constants/enums.dart';
+import 'package:mahareal_flutter_app/configs/constants/service_list.dart';
 import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 
-class ServicesList extends StatelessWidget {
-  const ServicesList({super.key, required this.categoryIndex});
+class ServicesListBuilder extends StatelessWidget {
+  const ServicesListBuilder({super.key, required this.category});
 
-  final int categoryIndex;
+  final HomePageCategory category;
 
   @override
   Widget build(BuildContext context) {
+    Iterable<ServiceFormConfig> serviceList = category == HomePageCategory.all
+        ? services
+        : services.where((x) => x.categoryName == category);
     return ListView.builder(
-      itemCount: MyLists.homePageCategoryLists[categoryIndex].length,
+      // itemCount: MyLists.homePageCategoryLists[categoryIndex].length,
+      itemCount: serviceList.length,
       itemBuilder: (BuildContext context, int index) {
         return Padding(
           padding: CustomSizes.listPadding,
@@ -26,15 +31,17 @@ class ServicesList extends StatelessWidget {
                 splashFactory: InkRipple.splashFactory,
                 side: BorderSide(color: MyColors.mutedGrey)),
             onPressed: () => {
-              // ScaffoldMessenger.of(context).showSnackBar(mySnackBar(
-              // 'Navigating to ${MyLists.homePageCategoryLists[categoryIndex][index]}')),
-              Navigator.pushNamed(context, '/service',
-                  arguments: {"title": MyLists.homePageCategoryLists[categoryIndex][index]})
+              // Navigator.pushNamed(context, '/service',
+              //     arguments: {"title": MyLists.homePageCategoryLists[categoryIndex][index]})
+              Navigator.pushNamed(context, '/service', arguments: {
+                "title": serviceList.elementAt(index).serviceName
+              })
             },
             child: Padding(
               padding: CustomSizes.safetyPadding,
               child: Text(
-                MyLists.homePageCategoryLists[categoryIndex][index],
+                // MyLists.homePageCategoryLists[categoryIndex][index],
+                serviceList.elementAt(index).serviceName,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: MyColors.textDark,

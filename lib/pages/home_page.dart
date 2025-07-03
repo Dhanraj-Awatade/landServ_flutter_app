@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:mahareal_flutter_app/components/HomePage/main_service_button.dart';
 import 'package:mahareal_flutter_app/components/HomePage/profile_button.dart';
 import 'package:mahareal_flutter_app/components/HomePage/search_bars.dart';
-import 'package:mahareal_flutter_app/components/HomePage/services_list.dart';
+import 'package:mahareal_flutter_app/components/HomePage/services_list_builder.dart';
 import 'package:mahareal_flutter_app/components/text_widgets.dart';
 import 'package:mahareal_flutter_app/configs/constants/colors.dart';
+import 'package:mahareal_flutter_app/configs/constants/enums.dart';
 import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,12 +17,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentSelectedSectionIndex = 0;
+  HomePageCategory _currentSelectedCategory = HomePageCategory.all;
   bool isUserNameDisplayed = false;
 
-  Future<void> _selectSection(int index) async {
+  Future<void> _selectSection(HomePageCategory category) async {
     setState(() {
-      _currentSelectedSectionIndex = index;
+      _currentSelectedCategory = category;
     });
   }
 
@@ -48,7 +49,10 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
-                          children: [ConstantTextWidgets.titleTextWidget, profileButton(context)],
+                          children: [
+                            ConstantTextWidgets.titleTextWidget,
+                            profileButton(context)
+                          ],
                         ),
                         const SizedBox(
                           height: CustomSizes.defaultSpace,
@@ -62,29 +66,29 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     MainServiceButton(
-                      index: 0,
-                      currentIndex: _currentSelectedSectionIndex,
+                      category: HomePageCategory.all,
+                      currentCategory: _currentSelectedCategory,
                       setIndex: _selectSection,
                       title: "All",
                       imageAsset: 'assets/icons/all_services.png',
                     ),
                     MainServiceButton(
-                      index: 1,
-                      currentIndex: _currentSelectedSectionIndex,
+                      category: HomePageCategory.documents,
+                      currentCategory: _currentSelectedCategory,
                       setIndex: _selectSection,
                       title: "Documents",
                       imageAsset: 'assets/icons/documents.png',
                     ),
                     MainServiceButton(
-                      index: 2,
-                      currentIndex: _currentSelectedSectionIndex,
+                      category: HomePageCategory.services,
+                      currentCategory: _currentSelectedCategory,
                       setIndex: _selectSection,
                       title: "Services",
                       imageAsset: 'assets/icons/services.png',
                     ),
                     MainServiceButton(
-                      index: 3,
-                      currentIndex: _currentSelectedSectionIndex,
+                      category: HomePageCategory.surveys,
+                      currentCategory: _currentSelectedCategory,
                       setIndex: _selectSection,
                       title: "Surveys",
                       imageAsset: 'assets/icons/survey.png',
@@ -104,8 +108,8 @@ class _HomePageState extends State<HomePage> {
                   color: MyColors.bgLight,
                 ),
                 width: double.infinity,
-                child: ServicesList(
-                  categoryIndex: _currentSelectedSectionIndex,
+                child: ServicesListBuilder(
+                  category: _currentSelectedCategory,
                 ),
               ),
             ),

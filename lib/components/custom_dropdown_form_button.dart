@@ -19,7 +19,6 @@ class CustomDropdownFormButton extends StatelessWidget {
         // alignment: Alignment.center,
 
         onChanged: onChanged,
-        // style: TextStyle(color: MyColors.textWhite),
         items: items.map((String value) {
           return DropdownMenuItem<String>(value: value, child: Text(value));
         }).toList(),
