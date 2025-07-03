@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "92125196338",
+    "project_id": "mahareal-flutter",
+    "storage_bucket": "mahareal-flutter.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92125196338:android:40db976c3ba09ed9b74c2b",
+        "android_client_info": {
+          "package_name": "com.mahareal.landserv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVWkCnpci21C_LcuOS06ET3OGgbZhnOvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.mahareal_flutter_app
+package com.mahareal.landserv
 
 import io.flutter.embedding.android.FlutterActivity
 
