@@ -35,7 +35,7 @@ final services = <ServiceFormConfig>[
       fields: [
         CustomFormConfig(
           hasTalDistDropDown: true,
-          textFieldList: [],
+          textFieldList: ["Survey Number", "Gat Number"],
           // dropDownList: [DropDownField(label: "", dropdownOptions: [])],
         )
       ]),

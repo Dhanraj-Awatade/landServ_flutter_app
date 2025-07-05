@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:mahareal_flutter_app/configs/constants/colors.dart';
 import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField(
-      {required this.label, required this.hint, super.key, this.validator, this.onChanged, this.maxLines});
+  const CustomTextFormField({
+    required this.label,
+    required this.hint,
+    // required this.controller,
+    super.key,
+    this.validator,
+    this.onChanged,
+    this.onSaved,
+    this.maxLines,
+  });
 
   final String label;
   final String hint;
+  // final controller = TextEditingController();
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
+  final FormFieldSetter<String>? onSaved;
   final int? maxLines;
 
   @override
@@ -27,12 +36,14 @@ class CustomTextFormField extends StatelessWidget {
         // },
         onChanged: onChanged,
         maxLines: maxLines,
+        onSaved: onSaved,
+        // controller: controller,
         onTapOutside: (event) {
           FocusManager.instance.primaryFocus?.unfocus();
         },
         textAlign: TextAlign.start,
         style: TextStyle(
-          color: MyColors.textWhite,
+          // color: MyColors.textWhite,
           fontSize: CustomSizes.regularFont,
         ),
         decoration: InputDecoration(
