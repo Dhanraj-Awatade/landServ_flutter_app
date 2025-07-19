@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mahareal_flutter_app/configs/constants/colors.dart';
+import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
 import 'package:mahareal_flutter_app/theme/custom_button_theme.dart';
 import 'package:mahareal_flutter_app/theme/custom_input_theme.dart';
 import 'package:mahareal_flutter_app/theme/text_themes.dart';
@@ -18,7 +19,20 @@ class MainTheme {
     outlinedButtonTheme: CustomButtonThemes.lightOutlinedButtonTheme,
     // scaffoldBackgroundColor: MyColors.bgLight, // use materialYou
     inputDecorationTheme: CustomInputThemes.lightInputTheme,
-    dropdownMenuTheme: DropdownMenuThemeData(inputDecorationTheme: CustomInputThemes.lightInputTheme),
+    dropdownMenuTheme: DropdownMenuThemeData(
+      inputDecorationTheme: CustomInputThemes.lightInputTheme,
+      menuStyle: MenuStyle(
+        elevation: WidgetStatePropertyAll(CustomSizes.buttonElevation),
+        shadowColor: WidgetStatePropertyAll(MyColors.tertiary),
+        // padding:
+        //     WidgetStatePropertyAll(EdgeInsets.all(CustomSizes.defaultSpace)),
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: CustomSizes.maxCircularBorderRadius,
+          ),
+        ),
+      ),
+    ),
     checkboxTheme: CheckboxThemeData(
       checkColor: WidgetStateProperty.all(MyColors.primary),
     ),

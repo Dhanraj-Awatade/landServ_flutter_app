@@ -6,18 +6,9 @@ class MyLists {
   MyLists._();
 
 /* Lists */
-  static List homePageCategoryLists = [
-    allServicesDescList,
-    landDocumentsList,
-    landServicesList,
-    surveysList
-  ];
+  static List homePageCategoryLists = [allServicesDescList, landDocumentsList, landServicesList, surveysList];
 
-  static const List bottomNavBarRouteList = [
-    HomePage(),
-    VaultPage(),
-    ConsultPage()
-  ];
+  static const List bottomNavBarRouteList = [HomePage(), VaultPage(), ConsultPage()];
 
   static const List servicesIconList = [
     "First",
@@ -26,8 +17,7 @@ class MyLists {
   ];
 
 /* Services Lists */
-  static List allServicesDescList =
-      landDocumentsList + landServicesList + surveysList;
+  static List allServicesDescList = landDocumentsList + landServicesList + surveysList;
 
   static const List<String> landDocumentsList = [
     "7/12",
@@ -66,9 +56,9 @@ class MyLists {
     "surveysList": surveysList
   };
 
-// Map < Service Name, List[TextFeilds], List[DropDs], upload enabled? >
+// Map < Service Name, List[TextFields], List[DropDs], upload enabled? >
 
-  final Map<String, Set<String>> maharashtraDistrictTalukas = {
+  static const Map<String, Set<String>> maharashtraDistrictTalukas = {
     'Pune': {
       'Haveli',
       'Mulshi',
