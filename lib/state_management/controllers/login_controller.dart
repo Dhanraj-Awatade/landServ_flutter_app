@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'package:mahareal_flutter_app/state_management/states/login_state.dart';
@@ -18,7 +19,7 @@ class LoginController extends StateNotifier<LoginState> {
     try {
       final response = await http.post(
         Uri.parse(
-            'https://mahareal-backend-92125196338.asia-south1.run.app/api/auth/login'), // Replace with your actual API
+            'https://mahareal-backend-92125196338.asia-south1.run.app/api/auth/login'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'username': username, 'password': password}),
       );

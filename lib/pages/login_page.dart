@@ -11,8 +11,8 @@ import 'package:mahareal_flutter_app/configs/constants/styles/spacing_styles.dar
 import 'package:mahareal_flutter_app/configs/constants/text_strings.dart';
 import 'package:mahareal_flutter_app/configs/utils/device_utils.dart';
 import 'package:mahareal_flutter_app/pages/home_page.dart';
-import 'package:mahareal_flutter_app/state_management/controllers/login_controller.dart';
 import 'package:mahareal_flutter_app/state_management/controllers/auth_controller.dart';
+import 'package:mahareal_flutter_app/state_management/controllers/login_controller.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
@@ -41,7 +41,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Login successful')),
       );
-      // ToDo: Push to Home
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (_) => const HomePage()),

@@ -29,7 +29,37 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
-/build/
+build/
+
+# generated_plugin_registrant
+generated_plugin_registrant.dart
+linux/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugin_registrant.cc
+macos/Flutter/GeneratedPluginRegistrant.swift
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.flutter-plugins
+ios/.flutter-plugins-dependencies
+ios/Runner.xcworkspace/
+ios/Runner.xcodeproj/project.xcworkspace/
+
+# macOS
+macos/Pods/
+macos/.symlinks/
+macos/.flutter-plugins
+macos/.flutter-plugins-dependencies
+
+# Android
+android/.gradle/
+android/.idea/
+android/local.properties
+android/app/.cxx/
+.gradle/
+*.jks
+*.keystore
 
 # Symbolication related
 app.*.symbols
