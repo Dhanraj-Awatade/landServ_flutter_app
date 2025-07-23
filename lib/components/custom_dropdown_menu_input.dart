@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mahareal_flutter_app/configs/constants/colors.dart';
 import 'package:mahareal_flutter_app/configs/constants/sizes.dart';
-import 'package:mahareal_flutter_app/theme/main_theme.dart';
 
 class CustomDropdownMenuInput extends StatelessWidget {
   const CustomDropdownMenuInput({
@@ -36,7 +35,9 @@ class CustomDropdownMenuInput extends StatelessWidget {
         elevation: WidgetStatePropertyAll(CustomSizes.buttonElevation),
         shadowColor: WidgetStatePropertyAll(MyColors.tertiary),
         shape: WidgetStatePropertyAll(
-          RoundedRectangleBorder(borderRadius: CustomSizes.maxCircularBorderRadius, side: BorderSide()),
+          RoundedRectangleBorder(
+              borderRadius: CustomSizes.maxCircularBorderRadius,
+              side: BorderSide()),
         ),
         padding: WidgetStatePropertyAll(CustomSizes.safetyPadding),
         // maximumSize: WidgetStatePropertyAll(Size.fromWidth(2)),
